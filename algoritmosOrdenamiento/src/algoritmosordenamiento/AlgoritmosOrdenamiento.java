@@ -1,21 +1,24 @@
 
 package algoritmosordenamiento;
 
+import clases.Persona;
 import ordenamiento.Ordenamiento;
 
 public class AlgoritmosOrdenamiento {
     
     public static void main(String[] args) {
-        int arreglo[];
-        arreglo=new int[(int)(Math.random()*20)];
+        Persona arregloPersona[]=new Persona[5];
         Ordenamiento ordenamiento=new Ordenamiento();
-        ordenamiento.ingreso(arreglo);
+        arregloPersona[0]=new Persona(152, "Juan Perez", 1500);
+        arregloPersona[1]=new Persona(845, "María Garcia", 1200);
+        arregloPersona[2]=new Persona(12, "Fernando Castillo", 2500);
+        arregloPersona[3]=new Persona(345, "Juana Peñaloza", 3500);
+        arregloPersona[4]=new Persona(192, "Jeremi Castro", 1000);
         System.out.println("Mostrar Arreglo Original");
-        ordenamiento.mostrar(arreglo);
-        //ordenamiento.burbuja(arreglo);
-        //ordenamiento.seleccion(arreglo);
-        ordenamiento.insercion(arreglo);
+        ordenamiento.mostrarPersona(arregloPersona);
+        //MÉTODO DE ORDENAMIENTO
+        
         System.out.println("Mostrar Arreglo Ordenado");
-        ordenamiento.mostrar(arreglo);
+        
     }
 }
