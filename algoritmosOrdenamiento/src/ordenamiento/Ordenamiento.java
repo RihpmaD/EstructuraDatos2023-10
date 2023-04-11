@@ -99,6 +99,48 @@ public class Ordenamiento {
             arreglo[j + 1] = indice;
         }
     }
+    
+    public void shellAscendenteEntero(int arreglo[]){
+        int i, j, k, intervalo=arreglo.length/2;
+        while(intervalo>=1){
+            for(i=0;i+intervalo<arreglo.length;i++){
+                j=i;
+                while(j>=0){
+                    k=j+intervalo;
+                    if(arreglo[j]>arreglo[k]){
+                        int aux=arreglo[k];
+                        arreglo[k]=arreglo[j];
+                        arreglo[j]=aux;
+                        j=j-intervalo;
+                    }else{
+                        j=-1;
+                    }
+                }
+            }
+            intervalo=intervalo/2;
+        }
+    }
+    
+    public void shellDescendenteEntero(int arreglo[]){
+        int i, j, k, intervalo=arreglo.length/2;
+        while(intervalo>=1){
+            for(i=0;i+intervalo<arreglo.length;i++){
+                j=i;
+                while(j>=0){
+                    k=j+intervalo;
+                    if(arreglo[j]<arreglo[k]){
+                        int aux=arreglo[k];
+                        arreglo[k]=arreglo[j];
+                        arreglo[j]=aux;
+                        j=j-intervalo;
+                    }else{
+                        j=-1;
+                    }
+                }
+            }
+            intervalo=intervalo/2;
+        }
+    }
 
     public void seleccionPersona(Persona arreglo[], int ordenamiento) {//1-ASC, 2-DES
         int i = 0, min, max, j;
@@ -169,5 +211,9 @@ public class Ordenamiento {
             default:
                 System.out.println("Opción ingresada incorrecta...");
         }
+    }
+    
+    public void ShellPersona(Persona arreglo[], int ordenamiento){//1-ASC, 2-DES
+        
     }
 }

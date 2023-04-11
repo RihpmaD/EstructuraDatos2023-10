@@ -7,6 +7,7 @@ import ordenamiento.Ordenamiento;
 public class AlgoritmosOrdenamiento {
     
     public static void main(String[] args) {
+        int arreglo[]=new int[10];
         Persona arregloPersona[]=new Persona[5];
         Ordenamiento ordenamiento=new Ordenamiento();
         arregloPersona[0]=new Persona(152, "Juan Perez", 1500);
@@ -15,10 +16,11 @@ public class AlgoritmosOrdenamiento {
         arregloPersona[3]=new Persona(345, "Juana Peñaloza", 3500);
         arregloPersona[4]=new Persona(192, "Jeremi Castro", 1000);
         System.out.println("Mostrar Arreglo Original");
-        ordenamiento.mostrarPersona(arregloPersona);
+        ordenamiento.ingresoAleatorioEntero(arreglo);
+        ordenamiento.mostrarEntero(arreglo);
         //MÉTODO DE ORDENAMIENTO
-        ordenamiento.insercionPersona(arregloPersona, 2);
+        ordenamiento.shellDescendenteEntero(arreglo);
         System.out.println("Mostrar Arreglo Ordenado");
-        ordenamiento.mostrarPersona(arregloPersona);
+        ordenamiento.mostrarEntero(arreglo);
     }
 }
