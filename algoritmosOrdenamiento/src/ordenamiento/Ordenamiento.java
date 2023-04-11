@@ -9,8 +9,8 @@ public class Ordenamiento {
             arreglo[i] = (int) (Math.random() * 50);
         }
     }
-    
-    public void mostrarPersona(Persona arreglo[]){
+
+    public void mostrarPersona(Persona arreglo[]) {
         System.out.print("\n");
         for (Persona arreglo1 : arreglo) {
             System.out.println(arreglo1);
@@ -55,8 +55,8 @@ public class Ordenamiento {
             i++;
         }
     }
-    
-    public void seleccionDescendenteEntero(int arreglo[]){
+
+    public void seleccionDescendenteEntero(int arreglo[]) {
         int i = 0, max, j;
         while (i < arreglo.length - 1) {
             max = i;
@@ -73,38 +73,101 @@ public class Ordenamiento {
             i++;
         }
     }
-    
-    public void insercionAscendenteEntero(int arreglo[]){
+
+    public void insercionAscendenteEntero(int arreglo[]) {
         int indice, j;
-        for(int i=1; i<arreglo.length;i++){
-            indice=arreglo[i];
-            j=i-1;
-            while(j>=0 && arreglo[j]>indice){
-                arreglo[j+1]=arreglo[j];
+        for (int i = 1; i < arreglo.length; i++) {
+            indice = arreglo[i];
+            j = i - 1;
+            while (j >= 0 && arreglo[j] > indice) {
+                arreglo[j + 1] = arreglo[j];
                 j--;
             }
-            arreglo[j+1]=indice;
+            arreglo[j + 1] = indice;
         }
     }
-    
-    public void insercionDescendenteEntero(int arreglo[]){
+
+    public void insercionDescendenteEntero(int arreglo[]) {
         int indice, j;
-        for(int i=1; i<arreglo.length;i++){
-            indice=arreglo[i];
-            j=i-1;
-            while(j>=0 && arreglo[j]<indice){
-                arreglo[j+1]=arreglo[j];
+        for (int i = 1; i < arreglo.length; i++) {
+            indice = arreglo[i];
+            j = i - 1;
+            while (j >= 0 && arreglo[j] < indice) {
+                arreglo[j + 1] = arreglo[j];
                 j--;
             }
-            arreglo[j+1]=indice;
+            arreglo[j + 1] = indice;
         }
     }
-    
-    public void seleccionPersona(Persona arreglo[], int ordenamiento){//1-ASC, 2-DES
-        
+
+    public void seleccionPersona(Persona arreglo[], int ordenamiento) {//1-ASC, 2-DES
+        int i = 0, min, max, j;
+        switch (ordenamiento) {
+            case 1:
+                while (i < arreglo.length - 1) {
+                    min = i;
+                    j = i + 1;
+                    while (j < arreglo.length) {
+                        if (arreglo[j].getCodigo() < arreglo[min].getCodigo()) {
+                            min = j;
+                        }
+                        j++;
+                    }
+                    Persona aux = arreglo[min];
+                    arreglo[min] = arreglo[i];
+                    arreglo[i] = aux;
+                    i++;
+                }
+                break;
+            case 2:
+                while (i < arreglo.length - 1) {
+                    max = i;
+                    j = i + 1;
+                    while (j < arreglo.length) {
+                        if (arreglo[j].getCodigo() > arreglo[max].getCodigo()) {
+                            max = j;
+                        }
+                        j++;
+                    }
+                    Persona aux = arreglo[max];
+                    arreglo[max] = arreglo[i];
+                    arreglo[i] = aux;
+                    i++;
+                }
+                break;
+            default:
+                System.out.println("Opción ingresada incorrecta...");
+        }
     }
-    
-    public void insercionPersona(Persona arreglo[], int ordenamiento){//1-ASC, 2-DES
-        
+
+    public void insercionPersona(Persona arreglo[], int ordenamiento) {//1-ASC, 2-DES
+        int j;
+        Persona indice;
+        switch (ordenamiento) {
+            case 1:
+                for (int i = 1; i < arreglo.length; i++) {
+                    indice = arreglo[i];
+                    j = i - 1;
+                    while (j >= 0 && arreglo[j].getCodigo() > indice.getCodigo()) {
+                        arreglo[j + 1] = arreglo[j];
+                        j--;
+                    }
+                    arreglo[j + 1] = indice;
+                }
+                break;
+            case 2:
+                for (int i = 1; i < arreglo.length; i++) {
+                    indice = arreglo[i];
+                    j = i - 1;
+                    while (j >= 0 && arreglo[j].getCodigo() < indice.getCodigo()) {
+                        arreglo[j + 1] = arreglo[j];
+                        j--;
+                    }
+                    arreglo[j + 1] = indice;
+                }
+                break;
+            default:
+                System.out.println("Opción ingresada incorrecta...");
+        }
     }
 }

@@ -17,8 +17,8 @@ public class AlgoritmosOrdenamiento {
         System.out.println("Mostrar Arreglo Original");
         ordenamiento.mostrarPersona(arregloPersona);
         //MÉTODO DE ORDENAMIENTO
-        
+        ordenamiento.insercionPersona(arregloPersona, 2);
         System.out.println("Mostrar Arreglo Ordenado");
-        
+        ordenamiento.mostrarPersona(arregloPersona);
     }
 }
