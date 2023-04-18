@@ -21,17 +21,26 @@ public class Semana04ArregloEjemplo {
         for (int i = 0; i < x.length; i++) {
             x[i] = LeerDato(i + 1);
         }
-        System.out.println("Arreglo X\n");
+        System.out.println("Arreglo X --> Estructura For\n");
         for (int i = 0; i < 5; i++) {
             System.out.print(x[i] + ", ");
+        }
+        System.out.println("\n\nArreglo X --> Estructura For-Each\n");
+        for(int val:x){
+            System.out.print(val + ", ");
         }
         for (int i = 0; i < 5; i++) {
             x[i] += 5;
         }
-        System.out.println("\n\nArreglo Z\n");
+        System.out.println("\n\nArreglo Z --> Estructura For\n");
         for (int i = 0; i < 5; i++) {
             System.out.print(z[i] + ", ");
         }
+        System.out.println("\n\nArreglo Z --> Estructura For-Each\n");
+        for(int val:z){
+            System.out.print(val + ", ");
+        }
+        System.out.println("");
 
     }
 
