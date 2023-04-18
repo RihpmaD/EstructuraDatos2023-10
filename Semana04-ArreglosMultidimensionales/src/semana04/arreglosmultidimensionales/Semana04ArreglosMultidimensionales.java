@@ -55,6 +55,16 @@ public class Semana04ArreglosMultidimensionales {
             }
         }
         
+        System.out.println("\n\nTABLA DE RESULTADOS\n");
+        System.out.println("TEMPORADA\tEQUIPO\tANOTADO\tRECIBIDO");
+        for(int i=0;i<datos.length;i++){
+            for(int j=0;j<datos[0].length;j++){
+                System.out.print(temporadas[i]);
+                System.out.print("\t"+equipos[j]);
+                System.out.print("\t"+datos[i][j][0]+"\t"+datos[i][j][1]+"\n");
+            }
+        }
+        
         System.out.println("\n\nRESUMEN DE RESULTADOS\n");
         System.out.println("PROMEDIO DE GOLES");
         for(int i=0;i<datos.length;i++){
