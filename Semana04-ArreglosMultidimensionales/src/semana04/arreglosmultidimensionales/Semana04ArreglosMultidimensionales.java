@@ -56,7 +56,7 @@ public class Semana04ArreglosMultidimensionales {
         }
         
         System.out.println("\n\nTABLA DE RESULTADOS\n");
-        System.out.println("TEMPORADA\tEQUIPO\tANOTADO\tRECIBIDO");
+        System.out.println("TEMPORADA\tEQUIPO\t\tANOTADO\tRECIBIDO");
         for(int i=0;i<datos.length;i++){
             for(int j=0;j<datos[0].length;j++){
                 System.out.print(temporadas[i]);
