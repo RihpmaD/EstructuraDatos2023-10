@@ -6,7 +6,7 @@ package clases;
  * @author C20177
  */
 public class Persona {
-    private int codigo;
+    //private int codigo;
     private String dni;
     private String nombre;
     private int edad;
@@ -14,19 +14,10 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(int codigo, String dni, String nombre, int edad) {
-        this.codigo = codigo;
+    public Persona(String dni, String nombre, int edad) {
         this.dni = dni;
         this.nombre = nombre;
         this.edad = edad;
-    }
-
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
     }
 
     public String getDni() {
@@ -55,7 +46,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + "codigo=" + codigo + ", dni=" + dni + ", nombre=" + nombre + ", edad=" + edad + '}';
+        return "Persona{" + "DNI=" + dni + ", nombre=" + nombre + ", edad=" + edad + '}';
     }
     
     
